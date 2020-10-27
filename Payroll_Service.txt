@@ -1,10 +1,9 @@
-+----+---------+--------+---------+------------+
-| id | name    | gender | salary  | start      |
-+----+---------+--------+---------+------------+
-|  1 | Bill    | M      | 1000000 | 2018-01-03 |
-|  2 | Terisa  | F      | 3000000 | 2019-11-13 |
-|  3 | Charlie | M      | 3000000 | 2020-05-21 |
-+----+---------+--------+---------+------------+
+ MySQL  SQL > \connect root@localhost:3306
+Creating a session to 'root@localhost:3306'
+Fetching schema names for autocompletion... Press ^C to stop.
+Your MySQL connection id is 29
+Server version: 8.0.22 MySQL Community Server - GPL
+No default schema selected; type \use <schema> to set one.
 
- mysqldump -u root -p fundoo > fundooDB.sql
-mysql -u root -p KalpeshFundoo < fundooDB.sql 
+----UC1----
+
