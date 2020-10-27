@@ -65,3 +65,13 @@ Query OK, 0 rows affected (4.5038 sec)
 4 rows in set (0.4854 sec)
 
 ----UC3----
+
+ MySQL  localhost:3306 ssl  payroll_service  SQL > insert into employee_payroll (name, salary, start) values
+                                                   ('Bill',1000000.00, '2010-01-03'),
+                                                   ('Terisa',2000000.00,'2019-11-13'),
+                                                   ('Charlie',3000000.00,'2020-05-21');
+Query OK, 3 rows affected (0.4894 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+----UC4----
