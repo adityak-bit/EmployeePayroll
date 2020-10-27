@@ -7,3 +7,27 @@ No default schema selected; type \use <schema> to set one.
 
 ----UC1----
 
+ MySQL  localhost:3306 ssl  SQL > create database payroll_service;
+Query OK, 1 row affected (0.1667 sec)
+
+ MySQL  localhost:3306 ssl  SQL > show databases;
++--------------------+
+| Database           |
++--------------------+
+| capgemini          |
+| information_schema |
+| mysql              |
+| payroll_service    |
+| performance_schema |
+| sakila             |
+| sys                |
+| testdb             |
+| world              |
++--------------------+
+9 rows in set (0.0618 sec)
+
+ MySQL  localhost:3306 ssl  SQL > use payroll_service;
+Default schema set to `payroll_service`.
+Fetching table and column names from `payroll_service` for auto-completion... Press ^C to stop.
+
+----UC2----
