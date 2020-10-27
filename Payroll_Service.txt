@@ -106,3 +106,60 @@ Records: 3  Duplicates: 0  Warnings: 0
 2 rows in set (0.0294 sec)
 
 ----UC6----
+
+ MySQL  localhost:3306 ssl  payroll_service  SQL > alter table employee_payroll add gender CHAR(1) after name;
+Query OK, 0 rows affected (4.0845 sec)
+
+Records: 0  Duplicates: 0  Warnings: 0
+ MySQL  localhost:3306 ssl  payroll_service  SQL > describe employee_payroll;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int unsigned | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(150) | NO   |     | NULL    |                |
+| gender | char(1)      | YES  |     | NULL    |                |
+| salary | double       | NO   |     | NULL    |                |
+| start  | date         | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+5 rows in set (0.0602 sec)
+ MySQL  localhost:3306 ssl  payroll_service  SQL > update employee_payroll set gender = 'F' where name = 'Terisa';
+Query OK, 1 row affected (0.1116 sec)
+
+Rows matched: 1  Changed: 1  Warnings: 0
+ MySQL  localhost:3306 ssl  payroll_service  SQL > update employee_payroll set gender = 'M' where name = 'Bill';
+Query OK, 1 row affected (0.0642 sec)
+
+Rows matched: 1  Changed: 1  Warnings: 0
+ MySQL  localhost:3306 ssl  payroll_service  SQL > update employee_payroll set gender = 'M' where name = 'Charlie';
+Query OK, 1 row affected (0.0935 sec)
+
+Rows matched: 1  Changed: 1  Warnings: 0
+ MySQL  localhost:3306 ssl  payroll_service  SQL > describe employee_payroll;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int unsigned | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(150) | NO   |     | NULL    |                |
+| gender | char(1)      | YES  |     | NULL    |                |
+| salary | double       | NO   |     | NULL    |                |
+| start  | date         | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+5 rows in set (0.1119 sec)
+ MySQL  localhost:3306 ssl  payroll_service  SQL > select database();
++-----------------+
+| database()      |
++-----------------+
+| payroll_service |
++-----------------+
+1 row in set (0.0003 sec)
+ MySQL  localhost:3306 ssl  payroll_service  SQL > select * from employee_payroll;
++----+---------+--------+---------+------------+
+| id | name    | gender | salary  | start      |
++----+---------+--------+---------+------------+
+|  1 | Bill    | M      | 1000000 | 2010-01-03 |
+|  2 | Terisa  | F      | 2000000 | 2019-11-13 |
+|  3 | Charlie | M      | 3000000 | 2020-05-21 |
++----+---------+--------+---------+------------+
+3 rows in set (0.0012 sec)
+
+----UC7----
