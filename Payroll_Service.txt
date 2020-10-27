@@ -31,3 +31,37 @@ Default schema set to `payroll_service`.
 Fetching table and column names from `payroll_service` for auto-completion... Press ^C to stop.
 
 ----UC2----
+
+ MySQL  localhost:3306 ssl  payroll_service  SQL > select database();
++-----------------+
+| database()      |
++-----------------+
+| payroll_service |
++-----------------+
+1 row in set (0.0004 sec)
+ MySQL  localhost:3306 ssl  payroll_service  SQL > create table employee_payroll ( id         INT unsigned NOT NULL AUTO_INCREMENT,
+                                                                                   name       VARCHAR(150) NOT NULL,
+                                                                                   salary     Double NOT NULL,
+                                                                                   start      DATE NOT NULL,
+                                                                                   PRIMARY KEY (id) )
+                                                -> ;
+Query OK, 0 rows affected (4.5038 sec)
+ MySQL  localhost:3306 ssl  payroll_service  SQL > select database();
++-----------------+
+| database()      |
++-----------------+
+| payroll_service |
++-----------------+
+1 row in set (0.0003 sec)
+ MySQL  localhost:3306 ssl  payroll_service  SQL > describe employee_payroll;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int unsigned | NO   | PRI | NULL    | auto_increment |
+| name   | varchar(150) | NO   |     | NULL    |                |
+| salary | double       | NO   |     | NULL    |                |
+| start  | date         | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+4 rows in set (0.4854 sec)
+
+----UC3----
