@@ -87,3 +87,22 @@ Records: 3  Duplicates: 0  Warnings: 0
 3 rows in set (0.0196 sec)
 
 ----UC5----
+
+ MySQL  localhost:3306 ssl  payroll_service  SQL > select salary from employee_payroll where name = 'Bill';
++---------+
+| salary  |
++---------+
+| 1000000 |
++---------+
+1 row in set (0.0266 sec)
+ MySQL  localhost:3306 ssl  payroll_service  SQL > select * from employee_payroll
+                                                -> where start between cast('2018=01-01' as date ) and date(now());
++----+---------+---------+------------+
+| id | name    | salary  | start      |
++----+---------+---------+------------+
+|  2 | Terisa  | 2000000 | 2019-11-13 |
+|  3 | Charlie | 3000000 | 2020-05-21 |
++----+---------+---------+------------+
+2 rows in set (0.0294 sec)
+
+----UC6----
