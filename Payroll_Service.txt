@@ -163,3 +163,18 @@ Rows matched: 1  Changed: 1  Warnings: 0
 3 rows in set (0.0012 sec)
 
 ----UC7----
+
+ MySQL  localhost:3306 ssl  payroll_service  SQL > select avg(salary) from employee_payroll where gender = 'M' group by gender;
++-------------+
+| avg(salary) |
++-------------+
+|     2000000 |
++-------------+
+1 row in set (0.0356 sec)
+ MySQL  localhost:3306 ssl  payroll_service  SQL > select avg(salary) from employee_payroll where gender = 'F' group by gender;
++-------------+
+| avg(salary) |
++-------------+
+|     3000000 |
++-------------+
+1 row in set (0.0008 sec)
